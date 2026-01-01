@@ -24,8 +24,6 @@ It allows users to test their knowledge with multiple-choice questions, view ins
 
 ---
 
-## 📂 Project Structure
-
 
 
 
