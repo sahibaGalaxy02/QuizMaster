@@ -22,7 +22,8 @@ It allows users to test their knowledge with multiple-choice questions, view ins
 - **CSS3** – Styling & layout
 - **JavaScript (ES6)** – Quiz logic & interactivity
 
----
+
+
 
 
 
