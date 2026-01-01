@@ -1,6 +1,4 @@
-﻿# QuizMaster
-
- # QuizMaster 🧠✨
+# QuizMaster 🧠✨
 
 QuizMaster is an interactive quiz website built using **HTML, CSS, and JavaScript**.  
 It allows users to test their knowledge with multiple-choice questions, view instant results, and enjoy a clean, modern UI.
@@ -27,6 +25,7 @@ It allows users to test their knowledge with multiple-choice questions, view ins
 ---
 
 ## 📂 Project Structure
+
 
 
 
