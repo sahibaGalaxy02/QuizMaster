@@ -1,10 +1,12 @@
 let shuffledQuestions = [];
 
 function shuffleArray(arr) {
-  return arr.sort(() => Math.random() - 0.5);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
-
-
 
 const startBtn = document.querySelector(".start-btn");
 const popup = document.querySelector(".popup-info");
@@ -24,6 +26,9 @@ const scoreEl = document.querySelector(".score");
 const percent = document.querySelector(".percent");
 const scoreText = document.querySelector(".score-text");
 
+const tryBtn = document.querySelector(".try-btn");
+const homeBtn = document.querySelector(".home-btn");
+
 let index = 0;
 let score = 0;
 
@@ -33,24 +38,22 @@ exitBtn.onclick = () => popup.classList.remove("active");
 continueBtn.onclick = () => {
   popup.classList.remove("active");
   home.classList.remove("active");
+  result.classList.remove("active");
   quiz.classList.add("active");
 
-  // RESET QUIZ
   index = 0;
   score = 0;
   scoreEl.textContent = "Score: 0";
 
-  // 🔥 NEW QUIZ EVERY TIME
   shuffledQuestions = shuffleArray([...questions]);
-
   loadQuestion();
 };
 
-
 function loadQuestion() {
-const q = shuffledQuestions[index];
+  const q = shuffledQuestions[index];
   qText.textContent = q.q;
   optList.innerHTML = "";
+  nextBtn.disabled = true;
 
   q.o.forEach((opt, i) => {
     const div = document.createElement("div");
@@ -58,31 +61,32 @@ const q = shuffledQuestions[index];
     div.textContent = opt;
     div.onclick = () => checkAnswer(div, i);
     optList.appendChild(div);
-    nextBtn.disabled = true;
-
   });
 
-  total.textContent = `${index + 1} of ${questions.length} Questions`;
+  total.textContent = `${index + 1} of ${shuffledQuestions.length} Questions`;
 }
 
 function checkAnswer(el, i) {
-  document.querySelectorAll(".option").forEach(o => o.style.pointerEvents = "none");
+  const correctIndex = shuffledQuestions[index].a;
+  const options = document.querySelectorAll(".option");
 
-  if (i === questions[index].a) {
+  options.forEach(o => o.style.pointerEvents = "none");
+
+  if (i === correctIndex) {
     score++;
     el.classList.add("correct");
   } else {
     el.classList.add("wrong");
+    options[correctIndex].classList.add("correct");
   }
 
   scoreEl.textContent = `Score: ${score}`;
   nextBtn.disabled = false;
 }
 
-
 nextBtn.onclick = () => {
   index++;
-  if (index < questions.length) {
+  if (index < shuffledQuestions.length) {
     loadQuestion();
   } else {
     showResult();
@@ -93,27 +97,22 @@ function showResult() {
   quiz.classList.remove("active");
   result.classList.add("active");
 
-  const percentage = Math.round((score / questions.length) * 100);
-
+  const percentage = Math.round((score / shuffledQuestions.length) * 100);
   percent.textContent = percentage + "%";
-  scoreText.textContent = `Your Score ${score} out of ${questions.length}`;
+  scoreText.textContent = `Your Score ${score} out of ${shuffledQuestions.length}`;
 }
-const tryBtn = document.querySelector(".try-btn");
-const homeBtn = document.querySelector(".home-btn");
 
 tryBtn.onclick = () => {
-  // reset quiz
   index = 0;
   score = 0;
+  scoreEl.textContent = "Score: 0";
+  shuffledQuestions = shuffleArray([...questions]);
 
   result.classList.remove("active");
   quiz.classList.add("active");
-
-  scoreEl.textContent = "Score: 0";
   loadQuestion();
 };
 
 homeBtn.onclick = () => {
   location.reload();
 };
-
