@@ -148,5 +148,155 @@ const questions = [
       "vh"
     ],
     a: 3
+  },
+  {
+    q: "Which HTML tag is used to create a paragraph?",
+    o: [
+      "<para>",
+      "<p>",
+      "<text>",
+      "<pg>"
+    ],
+    a: 1
+  },
+  {
+    q: "Which HTML tag is used to insert a line break?",
+    o: [
+      "<lb>",
+      "<break>",
+      "<br>",
+      "<hr>"
+    ],
+    a: 2
+  },
+  {
+    q: "Which CSS property changes the background color?",
+    o: [
+      "color",
+      "bgcolor",
+      "background-color",
+      "background-style"
+    ],
+    a: 2
+  },
+  {
+    q: "Which JavaScript keyword is used to define a function?",
+    o: [
+      "func",
+      "function",
+      "define",
+      "method"
+    ],
+    a: 1
+  },
+  {
+    q: "How do you write an alert box in JavaScript?",
+    o: [
+      "msg('Hello')",
+      "alertBox('Hello')",
+      "alert('Hello')",
+      "prompt('Hello')"
+    ],
+    a: 2
+  },
+  {
+    q: "Which HTML tag is used to make text bold?",
+    o: [
+      "<bold>",
+      "<b>",
+      "<stronger>",
+      "<text-bold>"
+    ],
+    a: 1
+  },
+  {
+    q: "Which CSS property is used to center text?",
+    o: [
+      "font-align",
+      "align",
+      "text-align",
+      "center-text"
+    ],
+    a: 2
+  },
+  {
+    q: "Which JavaScript operator is used for strict equality?",
+    o: [
+      "==",
+      "=",
+      "===",
+      "!="
+    ],
+    a: 2
+  },
+  {
+    q: "Which HTML element is used for an unordered list?",
+    o: [
+      "<ol>",
+      "<li>",
+      "<ul>",
+      "<list>"
+    ],
+    a: 2
+  },
+  {
+    q: "Which HTML tag is used to create a table row?",
+    o: [
+      "<td>",
+      "<th>",
+      "<tr>",
+      "<table-row>"
+    ],
+    a: 2
+  },
+  {
+    q: "Which CSS property is used to make text bold?",
+    o: [
+      "font-weight",
+      "text-weight",
+      "font-style",
+      "text-style"
+    ],
+    a: 0
+  },
+  {
+    q: "Which JavaScript method converts JSON text into an object?",
+    o: [
+      "JSON.stringify()",
+      "JSON.parse()",
+      "JSON.object()",
+      "JSON.convert()"
+    ],
+    a: 1
+  },
+  {
+    q: "Which HTML attribute specifies the URL of an image?",
+    o: [
+      "href",
+      "link",
+      "src",
+      "path"
+    ],
+    a: 2
+  },
+  {
+    q: "Which CSS property controls the space outside an element?",
+    o: [
+      "padding",
+      "margin",
+      "border-spacing",
+      "outline"
+    ],
+    a: 1
+  },
+  {
+    q: "Which JavaScript loop is commonly used to repeat code while a condition is true?",
+    o: [
+      "repeat",
+      "foreach",
+      "while",
+      "loop"
+    ],
+    a: 2
   }
 ];
